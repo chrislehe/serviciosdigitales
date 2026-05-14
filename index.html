@@ -1,51 +1,442 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SC Servicios Digitales</title>
+
+<!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- ICONOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0f172a;
+
+    font-family:'Outfit', sans-serif;
+
+    background:
+    #020617;
+
     color:white;
+
+    overflow-x:hidden;
 }
 
 /* =========================
-   HEADER
+   HERO BANNER
 ========================= */
 
-.header{
-    padding:60px 20px;
-    text-align:center;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    border-bottom:1px solid rgba(255,255,255,.08);
+.hero-banner{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:80px 8%;
+
+    overflow:hidden;
+
+    background:
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop')
+    center center/cover no-repeat;
 }
 
-.header h1{
-    font-size:42px;
+/* OVERLAY */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    120deg,
+    rgba(2,6,23,.97),
+    rgba(15,23,42,.90),
+    rgba(30,27,75,.88)
+    );
+}
+
+/* GRID EFFECT */
+
+.hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+    background-size:50px 50px;
+
+    mask-image:
+    linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,.25));
+}
+
+/* GLOW LIGHTS */
+
+.hero-light{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+}
+
+.light1{
+
+    width:400px;
+    height:400px;
+
+    background:#00d4ff;
+
+    top:-100px;
+    left:-100px;
+}
+
+.light2{
+
+    width:450px;
+    height:450px;
+
+    background:#7c3aed;
+
+    bottom:-120px;
+    right:-120px;
+}
+
+/* CONTENT */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+}
+
+/* BADGE */
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    color:#e2e8f0;
+
+    margin-bottom:35px;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+    box-shadow:
+    0 0 25px rgba(0,212,255,.08);
+}
+
+/* TITULO */
+
+.hero-banner h1{
+
+    font-size:84px;
+
+    line-height:1;
+
+    font-weight:900;
+
+    margin-bottom:28px;
+
+    letter-spacing:-4px;
+
+    color:white;
+}
+
+/* TEXTO GRADIENTE */
+
+.hero-banner h1 span{
+
+    display:block;
+
+    margin-top:14px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00d4ff,
+    #7c3aed,
+    #00d4ff
+    );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+
+    to{
+        background-position:200% center;
+    }
+}
+
+/* SUBTEXTO */
+
+.hero-banner p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+
+    margin-bottom:45px;
+
+    max-width:680px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+/* BOTON PRINCIPAL */
+
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px 32px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00d4ff,
+    #7c3aed
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:16px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 35px rgba(124,58,237,.35);
+}
+
+.btn-primary:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 45px rgba(0,212,255,.45);
+}
+
+/* BOTON SECUNDARIO */
+
+.btn-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 32px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:
+    1px solid rgba(255,255,255,.10);
+
+    color:white;
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+
+    background:
+    rgba(255,255,255,.12);
+
+    transform:
+    translateY(-3px);
+}
+
+/* CARD FLOTANTE */
+
+.hero-card{
+
+    position:relative;
+
+    z-index:2;
+
+    width:360px;
+
+    padding:38px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:
+    1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.35);
+}
+
+/* ICON */
+
+.card-icon{
+
+    width:75px;
+    height:75px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    font-size:32px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00d4ff,
+    #7c3aed
+    );
+
+    box-shadow:
+    0 0 25px rgba(0,212,255,.35);
+}
+
+/* CARD TEXT */
+
+.hero-card h3{
+
+    font-size:30px;
+
     margin-bottom:15px;
-    color:#38bdf8;
 }
 
-.header p{
-    color:#94a3b8;
-    font-size:18px;
-    max-width:700px;
-    margin:auto;
-    line-height:1.6;
+.hero-card p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+
+    margin-bottom:35px;
+}
+
+/* STATS */
+
+.card-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.card-stats strong{
+
+    display:block;
+
+    font-size:32px;
+
+    color:#00d4ff;
+}
+
+.card-stats span{
+
+    color:#cbd5e1;
+
+    font-size:14px;
 }
 
 /* =========================
@@ -53,9 +444,12 @@ body{
 ========================= */
 
 .container{
+
     max-width:1200px;
+
     margin:auto;
-    padding:50px 20px;
+
+    padding:90px 20px;
 }
 
 /* =========================
@@ -63,12 +457,23 @@ body{
 ========================= */
 
 .section-title{
-    font-size:28px;
-    margin-bottom:30px;
-    color:#38bdf8;
+
+    font-size:34px;
+
+    margin-bottom:35px;
+
+    color:white;
+
     display:flex;
+
     align-items:center;
-    gap:10px;
+
+    gap:14px;
+}
+
+.section-title i{
+
+    color:#00d4ff;
 }
 
 /* =========================
@@ -76,10 +481,15 @@ body{
 ========================= */
 
 .grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-bottom:60px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(270px,1fr));
+
+    gap:28px;
+
+    margin-bottom:80px;
 }
 
 /* =========================
@@ -87,88 +497,200 @@ body{
 ========================= */
 
 .card{
-    background:#1e293b;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:30px 25px;
-    transition:.3s;
+
     position:relative;
+
     overflow:hidden;
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(15,23,42,.95),
+    rgba(30,41,59,.85)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    border-radius:24px;
+
+    padding:35px 28px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(14px);
 }
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+    rgba(0,212,255,.08);
+
+    top:-60px;
+    right:-60px;
+}
+
+/* HOVER */
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#38bdf8;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(0,212,255,.35);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
 }
+
+/* ICONOS */
 
 .card i{
+
     font-size:42px;
-    margin-bottom:20px;
-    color:#38bdf8;
+
+    margin-bottom:22px;
+
+    color:#00d4ff;
 }
+
+/* TITULO */
 
 .card h3{
-    font-size:22px;
-    margin-bottom:12px;
+
+    font-size:24px;
+
+    margin-bottom:14px;
 }
+
+/* TEXTO */
 
 .card p{
+
     color:#94a3b8;
-    line-height:1.6;
-    margin-bottom:25px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
 }
 
-/* =========================
-   BOTONES
-========================= */
+/* BOTONES */
 
 .btn{
-    display:inline-block;
-    padding:12px 18px;
-    border-radius:10px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 22px;
+
+    border-radius:14px;
+
     text-decoration:none;
-    background:#38bdf8;
-    color:#0f172a;
-    font-weight:bold;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00d4ff,
+    #7c3aed
+    );
+
+    color:white;
+
+    font-weight:700;
+
     transition:.3s;
 }
 
 .btn:hover{
-    background:#0ea5e9;
-    transform:scale(1.03);
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(124,58,237,.30);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer{
+
     text-align:center;
-    padding:35px 20px;
+
+    padding:45px 20px;
+
     background:#020617;
+
     color:#64748b;
-    border-top:1px solid rgba(255,255,255,.05);
+
+    border-top:
+    1px solid rgba(255,255,255,.05);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .hero-banner{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .hero-content{
+
+        margin-bottom:60px;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+}
 
 @media(max-width:768px){
 
-    .header h1{
-        font-size:32px;
+    .hero-banner{
+
+        min-height:auto;
+
+        padding:90px 20px;
     }
 
-    .header p{
-        font-size:16px;
+    .hero-banner h1{
+
+        font-size:50px;
+
+        letter-spacing:-2px;
+    }
+
+    .hero-banner p{
+
+        font-size:18px;
+    }
+
+    .hero-card{
+
+        width:100%;
     }
 
     .section-title{
-        font-size:24px;
-    }
 
+        font-size:28px;
+    }
 }
 
 </style>
@@ -177,17 +699,109 @@ body{
 <body>
 
 <!-- =========================
-     HEADER
+     HERO BANNER
 ========================= -->
 
-<header class="header">
+<header class="hero-banner">
 
-    <h1>SC Servicios Digitales</h1>
+    <!-- EFECTOS -->
 
-    <p>
-        Plataforma de apoyo administrativo y servicios digitales.
-        Accesos rápidos a plataformas oficiales del gobierno para realizar trámites de forma rápida y organizada.
-    </p>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-light light1"></div>
+
+    <div class="hero-light light2"></div>
+
+    <!-- CONTENIDO -->
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Servicios Digitales Oficiales
+
+        </div>
+
+        <h1>
+
+            Trámites Digitales
+
+            <span>Rápidos y Seguros</span>
+
+        </h1>
+
+        <p>
+
+            Plataforma moderna para acceder rápidamente
+            a trámites oficiales del gobierno.
+            Soluciones digitales simples, organizadas y seguras.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn-primary">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Contactar Ahora
+
+            </a>
+
+            <a href="#servicios" class="btn-secondary">
+
+                Ver Servicios
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="hero-card">
+
+        <div class="card-icon">
+
+            <i class="fa-solid fa-file-shield"></i>
+
+        </div>
+
+        <h3>100% Digital</h3>
+
+        <p>
+
+            Accede a plataformas oficiales de forma rápida,
+            segura y organizada.
+
+        </p>
+
+        <div class="card-stats">
+
+            <div>
+
+                <strong>+20</strong>
+
+                <span>Servicios</span>
+
+            </div>
+
+            <div>
+
+                <strong>24/7</strong>
+
+                <span>Disponible</span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </header>
 
@@ -195,13 +809,16 @@ body{
      CONTENIDO
 ========================= -->
 
-<div class="container">
+<div class="container" id="servicios">
 
     <!-- GRATUITOS -->
 
     <h2 class="section-title">
+
         <i class="fa-solid fa-folder-open"></i>
+
         Trámites Gratuitos
+
     </h2>
 
     <div class="grid">
@@ -209,65 +826,97 @@ body{
         <!-- CURP -->
 
         <div class="card">
+
             <i class="fa-solid fa-id-card"></i>
 
             <h3>CURP</h3>
 
             <p>
+
                 Consulta y descarga oficial de CURP actualizada.
+
             </p>
 
             <a href="https://www.gob.mx/curp/" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
         <!-- NSS -->
 
         <div class="card">
+
             <i class="fa-solid fa-hospital"></i>
 
             <h3>NSS</h3>
 
             <p>
+
                 Obtén o consulta tu Número de Seguro Social.
+
             </p>
 
             <a href="https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
         <!-- SEMANAS -->
 
         <div class="card">
+
             <i class="fa-solid fa-file-waveform"></i>
 
             <h3>Semanas Cotizadas</h3>
 
             <p>
+
                 Consulta de semanas cotizadas IMSS.
+
             </p>
 
             <a href="https://serviciosdigitales.imss.gob.mx/semanascotizadas-web/usuarios/IngresoAsegurado" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
         <!-- SAT -->
 
         <div class="card">
+
             <i class="fa-solid fa-building-columns"></i>
 
             <h3>SAT</h3>
 
             <p>
+
                 Acceso rápido al portal oficial del SAT.
+
             </p>
 
             <a href="https://www.sat.gob.mx/" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
     </div>
@@ -275,8 +924,11 @@ body{
     <!-- CON COSTO -->
 
     <h2 class="section-title">
+
         <i class="fa-solid fa-file-invoice-dollar"></i>
+
         Trámites con costo
+
     </h2>
 
     <div class="grid">
@@ -284,49 +936,73 @@ body{
         <!-- ACTA -->
 
         <div class="card">
+
             <i class="fa-solid fa-file-lines"></i>
 
             <h3>Acta de Nacimiento</h3>
 
             <p>
+
                 Descarga oficial de acta certificada.
+
             </p>
 
             <a href="https://www.gob.mx/ActaNacimiento/" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
         <!-- MATRIMONIO -->
 
         <div class="card">
+
             <i class="fa-solid fa-ring"></i>
 
             <h3>Acta de Matrimonio</h3>
 
             <p>
+
                 Consulta y descarga de acta oficial.
+
             </p>
 
             <a href="https://www.gob.mx/" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
         <!-- DEFUNCION -->
 
         <div class="card">
+
             <i class="fa-solid fa-book"></i>
 
             <h3>Acta de Defunción</h3>
 
             <p>
+
                 Acceso a trámites y consultas oficiales.
+
             </p>
 
             <a href="https://www.gob.mx/" target="_blank" class="btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                 Ir al portal
+
             </a>
+
         </div>
 
     </div>
@@ -340,7 +1016,9 @@ body{
 <footer class="footer">
 
     <p>
+
         © 2026 SC Servicios Digitales | Plataforma de apoyo administrativo
+
     </p>
 
 </footer>
