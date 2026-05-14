@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SC Servicios Digitales</title>
+
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    padding:60px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header h1{
+    font-size:42px;
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.header p{
+    color:#94a3b8;
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+.section-title{
+    font-size:28px;
+    margin-bottom:30px;
+    color:#38bdf8;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-bottom:60px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:30px 25px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.card i{
+    font-size:42px;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#94a3b8;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn{
+    display:inline-block;
+    padding:12px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    background:#38bdf8;
+    color:#0f172a;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform:scale(1.03);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+    padding:35px 20px;
+    background:#020617;
+    color:#64748b;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .header h1{
+        font-size:32px;
+    }
+
+    .header p{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:24px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <h1>SC Servicios Digitales</h1>
+
+    <p>
+        Plataforma de apoyo administrativo y servicios digitales.
+        Accesos rápidos a plataformas oficiales del gobierno para realizar trámites de forma rápida y organizada.
+    </p>
+
+</header>
+
+<!-- =========================
+     CONTENIDO
+========================= -->
+
+<div class="container">
+
+    <!-- GRATUITOS -->
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-folder-open"></i>
+        Trámites Gratuitos
+    </h2>
+
+    <div class="grid">
+
+        <!-- CURP -->
+
+        <div class="card">
+            <i class="fa-solid fa-id-card"></i>
+
+            <h3>CURP</h3>
+
+            <p>
+                Consulta y descarga oficial de CURP actualizada.
+            </p>
+
+            <a href="https://www.gob.mx/curp/" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+        <!-- NSS -->
+
+        <div class="card">
+            <i class="fa-solid fa-hospital"></i>
+
+            <h3>NSS</h3>
+
+            <p>
+                Obtén o consulta tu Número de Seguro Social.
+            </p>
+
+            <a href="https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+        <!-- SEMANAS -->
+
+        <div class="card">
+            <i class="fa-solid fa-file-waveform"></i>
+
+            <h3>Semanas Cotizadas</h3>
+
+            <p>
+                Consulta de semanas cotizadas IMSS.
+            </p>
+
+            <a href="https://serviciosdigitales.imss.gob.mx/semanascotizadas-web/usuarios/IngresoAsegurado" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+        <!-- SAT -->
+
+        <div class="card">
+            <i class="fa-solid fa-building-columns"></i>
+
+            <h3>SAT</h3>
+
+            <p>
+                Acceso rápido al portal oficial del SAT.
+            </p>
+
+            <a href="https://www.sat.gob.mx/" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+    </div>
+
+    <!-- CON COSTO -->
+
+    <h2 class="section-title">
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+        Trámites con costo
+    </h2>
+
+    <div class="grid">
+
+        <!-- ACTA -->
+
+        <div class="card">
+            <i class="fa-solid fa-file-lines"></i>
+
+            <h3>Acta de Nacimiento</h3>
+
+            <p>
+                Descarga oficial de acta certificada.
+            </p>
+
+            <a href="https://www.gob.mx/ActaNacimiento/" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+        <!-- MATRIMONIO -->
+
+        <div class="card">
+            <i class="fa-solid fa-ring"></i>
+
+            <h3>Acta de Matrimonio</h3>
+
+            <p>
+                Consulta y descarga de acta oficial.
+            </p>
+
+            <a href="https://www.gob.mx/" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+        <!-- DEFUNCION -->
+
+        <div class="card">
+            <i class="fa-solid fa-book"></i>
+
+            <h3>Acta de Defunción</h3>
+
+            <p>
+                Acceso a trámites y consultas oficiales.
+            </p>
+
+            <a href="https://www.gob.mx/" target="_blank" class="btn">
+                Ir al portal
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 SC Servicios Digitales | Plataforma de apoyo administrativo
+    </p>
+
+</footer>
+
+</body>
+</html>
